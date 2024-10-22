@@ -1,4 +1,5 @@
 const inquirer = require('inquirer').default
+const figlet = require('figlet')
 
 console.log('Dice Roller Application Starts...')
 
@@ -8,6 +9,8 @@ console.log('Dice Roller Application Starts...')
  * Asks if the user wants to play again; if yes, restarts the game, otherwise exits.
  */
 function startGame () {
+  clearConsole()
+  console.log(figlet.textSync('Dice Roller', { horizontalLayout: 'full' }))
   inquirer.prompt([
     {
       type: 'input',
@@ -32,7 +35,7 @@ function startGame () {
             process.exit()
           }
           console.log('Rolling again...')
-          startGame()
+          setTimeout(startGame, 1000)
         })
     })
 }
@@ -46,6 +49,14 @@ const rollDice = (diceSize = 6) => {
   let diceResult = 0
   diceResult = Math.ceil(Math.random() * diceSize)
   return diceResult
+}
+
+/**
+ * Clears the console by writing a special sequence of characters to the process
+ * stdout
+ */
+const clearConsole = () => {
+  process.stdout.write('\u001B[2J\u001B[0;0H')
 }
 
 startGame()
