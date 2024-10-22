@@ -6,8 +6,8 @@
     "start": "node src/index.js",
     "start:dev": "node --watch src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "standard",
-    "lint:fix": "standard --fix",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "create_docs": "jsdoc ./src/*"
   },
   "keywords": [],
