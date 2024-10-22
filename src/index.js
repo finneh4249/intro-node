@@ -10,7 +10,7 @@ console.log('Dice Roller Application Starts...')
  */
 function startGame () {
   clearConsole()
-  console.log(figlet.textSync('Dice Roller', { horizontalLayout: 'full' }))
+  console.log(figlet.textSync('FinnehDice', { horizontalLayout: 'full' }))
   inquirer.prompt([
     {
       type: 'input',
