@@ -15,7 +15,13 @@ function startGame () {
     {
       type: 'input',
       name: 'dice',
-      message: 'What size dice do you want to roll?'
+      message: 'What size dice do you want to roll?',
+      validate: (input) => {
+        if (isNaN(input)) {
+          return 'Please enter a number'
+        }
+        return true
+      }
     }
   ])
     .then((answer) => {
